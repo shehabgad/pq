@@ -885,6 +885,7 @@ func (cn *conn) Close() (err error) {
 
 // Implement the "Queryer" interface
 func (cn *conn) Query(query string, args []driver.Value) (driver.Rows, error) {
+	fmt.Println("Query 000")
 	return cn.query(query, args)
 }
 

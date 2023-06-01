@@ -890,6 +890,11 @@ func (cn *conn) Query(query string, args []driver.Value) (driver.Rows, error) {
 	return cn.query(query, args)
 }
 
+func (cn *conn) Query2(query string, args []driver.Value) (driver.Rows, error) {
+	fmt.Println("my Query2")
+	return cn.query(query, args)
+}
+
 func (cn *conn) query(query string, args []driver.Value) (_ *rows, err error) {
 	fmt.Println("my query 12")
 

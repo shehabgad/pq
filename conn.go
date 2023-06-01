@@ -58,6 +58,7 @@ func (d Driver) Open(name string) (driver.Conn, error) {
 }
 
 func init() {
+	fmt.Println("here i am")
 	sql.Register("postgres", &Driver{})
 }
 

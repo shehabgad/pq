@@ -58,7 +58,7 @@ func (d Driver) Open(name string) (driver.Conn, error) {
 }
 
 func init() {
-	fmt.Println("here i am bruuh")
+	fmt.Println("here i am bruuh23")
 	sql.Register("postgres", &Driver{})
 }
 
@@ -886,10 +886,13 @@ func (cn *conn) Close() (err error) {
 
 // Implement the "Queryer" interface
 func (cn *conn) Query(query string, args []driver.Value) (driver.Rows, error) {
+	fmt.Println("my query")
 	return cn.query(query, args)
 }
 
 func (cn *conn) query(query string, args []driver.Value) (_ *rows, err error) {
+	fmt.Println("my query")
+
 	if err := cn.err.get(); err != nil {
 		return nil, err
 	}
@@ -1396,6 +1399,8 @@ func (st *stmt) Close() (err error) {
 }
 
 func (st *stmt) Query(v []driver.Value) (r driver.Rows, err error) {
+	fmt.Println("my query stmt")
+
 	return st.query(v)
 }
 
